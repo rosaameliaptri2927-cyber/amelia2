@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Rosa Amelia Putri</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      background-color: #5d6d7e;
+      color: white;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 230px;
+      height: 100vh;
+      background-color: #34495e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+      box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+    }
+
+    .sidebar h2 {
+      margin-bottom: 35px;
+      color: #ecf0f1;
+      font-size: 22px;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 5px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #ecf0f1;
+      font-size: 16px;
+      margin: 10px 0;
+      padding: 10px 20px;
+      width: 80%;
+      text-align: center;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #5d6d7e;
+    }
+
+    /* ===== KONTEN UTAMA ===== */
+    .content {
+      margin-left: 230px;
+      padding: 40px;
+      width: calc(100% - 230px);
+      background-color: #5d6d7e;
+      min-height: 100vh;
+    }
+
+    .section {
+      display: none;
+      animation: fade 0.5s;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* ===== HOME ===== */
+    .container {
+      display: flex;
+      align-items: center;
+      background-color: #7f8fa6;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      gap: 40px;
+      max-width: 900px;
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+    }
+
+    .name {
+      margin-top: 15px;
+      background-color: #95a5a6;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: white;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    .about {
+      background-color: #bdc3c7;
+      padding: 20px;
+      border-radius: 10px;
+      color: #2c3e50;
+      max-width: 500px;
+    }
+
+    .about h2 {
+      margin-top: 0;
+      color: #34495e;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .about p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ===== BOX (DATA DIRI, SKILL, PROJECT, SERTIFIKAT) ===== */
+    .box {
+      background-color: #7f8fa6;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 900px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      margin-top: 20px;
+    }
+
+    .box h2 {
+      background-color: #34495e;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .item {
+      background-color: #4a5b6e;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .skill-list, .project-list, .sertifikat-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .skill-list li, .project-list li, .sertifikat-list li {
+      margin-bottom: 10px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ===== KONTAK ===== */
+    .contact-box {
+      background-color: #7f8fa6;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 900px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .contact-box h2 {
+      background-color: #34495e;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .contact-box p {
+      margin: 8px 0;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== SIDEBAR ===== -->
+  <div class="sidebar">
+    <h2>PORTOFOLIO</h2>
+    <a class="active" data-target="home">Home</a>
+    <a data-target="data-diri">Data Diri</a>
+    <a data-target="skill">Skill</a>
+    <a data-target="project">Project</a>
+    <a data-target="sertifikat">Sertifikat</a>
+    <a data-target="kontak">Kontak</a>
+  </div>
+
+  <!-- ===== KONTEN UTAMA ===== -->
+  <div class="content">
+
+    <!-- HOME -->
+    <section id="home" class="section active">
+      <div class="container">
+        <div class="profile">
+          <img src="WhatsApp Image 2025-09-26 at 14.42.36_3530eebe.jpg" alt="Foto Profil">
+          <div class="name">ROSA AMELIA PUTRI</div>
+        </div>
+        <div class="about">
+          <h2>Hai Semuanya!!</h2>
+          <p>
+            Saya adalah siswa SMKN 1 Nglegok jurusan Teknik Komputer dan Jaringan (TKJ). 
+            Saya memiliki minat dan dasar keterampilan dalam bidang jaringan komputer. 
+            Selama di sekolah, saya telah mempelajari konfigurasi jaringan, dan penggunaan software pendukung 
+            seperti Cisco Packet Tracer. <br><br>
+            Saya memiliki semangat belajar yang tinggi, mampu bekerja dalam tim, 
+            dan siap untuk menambah pengalaman melalui praktik kerja atau kegiatan di industri.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA DIRI -->
+    <section id="data-diri" class="section">
+      <div class="box">
+        <h2>DATA DIRI</h2>
+        <div class="item">Nama Lengkap: Rosa Amelia Putri</div>
+        <div class="item">Alamat: Blitar Pasirharjo RT/RW 7/2</div>
+        <div class="item">Tanggal Lahir: 13 Maret 2009</div>
+        <div class="item">Jenis Kelamin: Perempuan</div>
+        <div class="item">Status: Pelajar</div>
+      </div>
+    </section>
+
+    <!-- SKILL -->
+    <section id="skill" class="section">
+      <div class="box">
+        <h2>SKILL</h2>
+        <ul class="skill-list">
+          <li>→ Instalasi dan konfigurasi jaringan LAN & WLAN</li>
+          <li>→ Subnetting dan pengaturan IP Address</li>
+          <li>→ Konfigurasi dasar Mikrotik (DHCP, NAT, Firewall, QoS)</li>
+          <li>→ Menggunakan Cisco Packet Tracer untuk simulasi jaringan</li>
+          <li>→ Instalasi Sistem Operasi (Windows & Debian)</li>
+          <li>→ HTML & CSS dasar</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECT -->
+    <section id="project" class="section">
+      <div class="box">
+        <h2>PROJECT</h2>
+        <ul class="project-list">
+          <li>Website Sistem Informasi Industri</li>
+          <li>→ Membuat website untuk pendataan barang di perusahaan</li>
+          <li>→ Teknologi: HTML, CSS, PHP, MySQL</li>
+          <li>→ Fitur: Login admin, input data barang, laporan data</li>
+          <li>→ Hasil: Website digunakan sebagai simulasi sistem inventaris di industri</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SERTIFIKAT -->
+    <section id="sertifikat" class="section">
+      <div class="box">
+        <h2>SERTIFIKAT</h2>
+        <ul class="sertifikat-list">
+          <li>→ Fortinet – Getting Started in Cybersecurity</li>
+          <li>→ Fortinet – Introduction to the Threat Landscape</li>
+          <li>→ LinkedIn Learning</li>
+          <li>→ Aguna – Linux Fundamental</li>
+          <li>→ Aguna – Network Fundamental</li>
+          <li>→ Cisco CCNA – Introduction to Networks</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="section">
+      <div class="contact-box">
+        <h2>KONTAK</h2>
+        <p>📍 Alamat: Blitar, Jawa Timur</p>
+        <p>📞 Telepon: 085706984677</p>
+        <p>📧 Email: rosameliaptr2927@gmail.com</p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Script sidebar pilihan
+    const menuLinks = document.querySelectorAll('.sidebar a');
+    const sections = document.querySelectorAll('.section');
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Hapus active dari semua link dan section
+        menuLinks.forEach(l => l.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        // Tambahkan active ke link dan section yang diklik
+        link.classList.add('active');
+        document.getElementById(link.dataset.target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
